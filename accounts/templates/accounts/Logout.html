@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="jumbotron text-center">
+    <div class="container">
+      <h3 class="jumbotron-heading text-warning">You have been successfully Logged Out</h1>
+      <br>
+      <p class="lead text-muted">Please click on the below button to return Home Page </p>
+      <br>
+      <a href="{% url 'home' %}"><button type="submit" class="btn btn-dark" > Home</button></a>
+    </div>
+  </section>
+
+{% endblock %}
