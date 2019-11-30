@@ -24,7 +24,17 @@ def signUp(request):
         return render(request,'accounts/SignUp.html')
 
 def logIn(request):
-    return render(request,'accounts/LogIn.html')
+    if(request.method=='POST'):
+        user=auth.authenticate(username=request.POST['userName'],password=request.POST['password'])
+        if user is not None:
+            auth.login(request,user)
+            return redirect('home')
+        else:
+            return render(request,'accounts/LogIn.html',{'errorPass':'UserName or Password does not Match'})
+    else:
+        return render(request,'accounts/LogIn.html')
 
 def logOut(request):
-    return render(request,'accounts/SignUp.html')
+    if(request.method=="POST"):
+        auth.logout(request)
+        return render(request,'accounts/Logout.html')

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Create Product</h1>
+      <p class="lead text-danger">Provide your Product Details </p>
+      <br>
+      <form method="POST" action="{% url 'create' %}" class="was-validated" id="identicalForm" enctype="multipart/form-data">
+      {% csrf_token%}
+          <div class="form-group">
+              <label>Title</label>
+              <input type="text" class="form-control" name="title" placeholder="Enter Product Title(*Less than 20 Character)" required/>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-3 control-label">Product Summary</label>
+              <input type="textbox" class="form-control" name="summary" placeholder="Product Summary"/>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-3 control-label">URL</label>
+              <input type="url" class="form-control" name="url" placeholder="Product URL" required/>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-3 control-label inline">Product Icon</label>
+              <input type="file" name="icon" required/>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-3 control-label">Product Image</label>
+              <input type="file" name="image" required/>
+          </div>
+          <button type="reset" name="Reset" class="btn btn-danger inline">Reset</button>
+          <button type="submit" name="Login" class="btn btn-primary inline">Publish</button>
+      </form>
+      {% if errorPass %}
+          <div class="alert alert-danger alert-dismissible fade show">
+          <strong>{{ errorPass }}</strong>
+          </div>
+      {% endif  %}
+      {% if errorUser %}
+          <div class="alert alert-info">
+            <strong>{{ errorUser }}</strong>
+          </div>
+      {% endif %}
+      <script>
+            $(document).ready(function() {
+            $('#identicalForm').bootstrapValidator();
+            });
+      </script>
+    </div>
+  </section>
+
+
+{% endblock %}
