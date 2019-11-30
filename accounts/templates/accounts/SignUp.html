@@ -7,6 +7,9 @@
       <h1 class="jumbotron-heading">Sign Up for the Page</h1>
       <p class="lead text-muted">Hi Everyone! Please sign up below </p>
       <br>
+    </div>
+</section>
+<div class="container text-center">
       <form method="POST" action="{% url 'signup' %}" class="was-validated" id="identicalForm">
       {% csrf_token%}
           <div class="form-group">
@@ -50,8 +53,8 @@
             $('#identicalForm').bootstrapValidator();
             });
       </script>
-    </div>
-  </section>
+</div>
+
 
 
 {% endblock %}
