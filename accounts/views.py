@@ -38,3 +38,5 @@ def logOut(request):
     if(request.method=="POST"):
         auth.logout(request)
         return render(request,'accounts/Logout.html')
+def notFound(request):
+    return render(request,'accounts/Facebook.html')

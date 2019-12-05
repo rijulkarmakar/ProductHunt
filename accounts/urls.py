@@ -5,6 +5,7 @@ urlpatterns = [
     path('signup/',views.signUp,name='signup'),
     path('login/',views.logIn,name='login'),
     path('logout/',views.logOut,name='logout'),
+    path('facebook',views.notFound,name='notfound'),
 ]
 
 
