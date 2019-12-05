@@ -25,7 +25,7 @@ SECRET_KEY = '_)&yu^&mwrb7(2h43t$n!x6_x&u*(uoh2f%)+5m)@mc8-x4+b='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ratehunter.herokuapp.com']
 
 
 # Application definition
